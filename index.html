@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Webex Global Variables</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Webex CC Rufbereitschaftsnummer Service</h1>
+      <form id="selectionForm">
+        <label for="action">Select Action:</label>
+        <select id="action" name="action" required>
+          <option value="view">See the current RB number</option>
+          <option value="update">Update the RB number</option>
+        </select>
+        <button type="button" id="selectButton">Select</button>
+      </form>
+
+      <form id="viewForm" style="display: none">
+        <p id="rbNumber" class="rb-number"></p>
+        <button type="button" id="updateYesButton">Yes, update it</button>
+        <button type="button" id="updateNoButton">No, go back</button>
+      </form>
+
+      <form id="updateForm" style="display: none">
+        <label for="variableValue">Phone Number:</label>
+        <input
+          type="text"
+          id="variableValue"
+          name="variableValue"
+          required
+        /><br /><br />
+        <button type="button" id="updateButton">Update Phone Number</button>
+      </form>
+      <p id="responseMessage" class="response-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
